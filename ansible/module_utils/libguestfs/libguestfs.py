@@ -68,7 +68,7 @@ class guest():
                 self.module.fail_json(**results)
             for root in roots:
                 mps = g.inspect_get_mountpoints(root)
-                for device in sorted(mps.keys(), compare):
+                for device in sorted(mps.keys()):
                     try:
                         g.mount(mps[device], device)
                     except RuntimeError as e:
